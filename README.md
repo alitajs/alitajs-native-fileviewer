@@ -13,25 +13,56 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`openDocument(...)`](#opendocument)
+* [`previewImage(...)`](#previewimage)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### openDocument(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+openDocument(options: OpenDocumentOptions) => Promise<void>
 ```
 
-| Param         | Type                            |
-| ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| Param         | Type                                                                |
+| ------------- | ------------------------------------------------------------------- |
+| **`options`** | <code><a href="#opendocumentoptions">OpenDocumentOptions</a></code> |
 
 --------------------
+
+
+### previewImage(...)
+
+```typescript
+previewImage(options: PreviewImageOptions) => Promise<void>
+```
+
+| Param         | Type                                                                |
+| ------------- | ------------------------------------------------------------------- |
+| **`options`** | <code><a href="#previewimageoptions">PreviewImageOptions</a></code> |
+
+--------------------
+
+
+### Interfaces
+
+
+#### OpenDocumentOptions
+
+| Prop           | Type                |
+| -------------- | ------------------- |
+| **`filePath`** | <code>string</code> |
+
+
+#### PreviewImageOptions
+
+| Prop          | Type                  |
+| ------------- | --------------------- |
+| **`urls`**    | <code>string[]</code> |
+| **`current`** | <code>number</code>   |
 
 </docgen-api>

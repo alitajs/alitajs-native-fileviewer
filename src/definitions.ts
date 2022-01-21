@@ -1,3 +1,13 @@
 export interface FileViewerPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  openDocument(options: OpenDocumentOptions): Promise<void>;
+  previewImage(options: PreviewImageOptions): Promise<void>;
+}
+
+export interface OpenDocumentOptions {
+  filePath: string;
+}
+
+export interface PreviewImageOptions {
+  urls: string[];
+  current: number;
 }
