@@ -4,6 +4,7 @@ import type {
   FileViewerPlugin,
   OpenDocumentOptions,
   PreviewImageOptions,
+  PreviewImageResult,
 } from './definitions';
 
 export class FileViewerWeb extends WebPlugin implements FileViewerPlugin {
@@ -11,7 +12,7 @@ export class FileViewerWeb extends WebPlugin implements FileViewerPlugin {
     throw this.unimplemented('Not implemented on web.');
   }
 
-  async previewImage(_: PreviewImageOptions): Promise<void> {
+  async previewImage(_: PreviewImageOptions): Promise<PreviewImageResult> {
     throw this.unimplemented('Not implemented on web.');
   }
 }
