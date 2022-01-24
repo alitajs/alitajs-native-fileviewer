@@ -19,4 +19,8 @@ public class FileViewerPlugin extends Plugin {
         ret.put("value", implementation.echo(value));
         call.resolve(ret);
     }
+
+    public void previewImage(PluginCall call) {
+
+    }
 }
