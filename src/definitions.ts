@@ -4,6 +4,9 @@ export interface FileViewerPlugin {
 }
 
 export interface OpenDocumentOptions {
+  /**
+   * 文件本地路径
+   */
   filePath: string;
 }
 

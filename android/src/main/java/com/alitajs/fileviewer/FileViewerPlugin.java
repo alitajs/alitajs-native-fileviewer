@@ -13,12 +13,14 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
+import java.io.File;
+
 @CapacitorPlugin(name = "FileViewer")
 public class FileViewerPlugin extends Plugin {
 
     private static final String TAG = "FileViewerPlugin";
 
-    private FileViewer implementation = new FileViewer();
+    private FileViewer implementation;
     private PhotoViewer photoViewerImp;
     private RetHandler rHandler = new RetHandler();
 
@@ -26,6 +28,7 @@ public class FileViewerPlugin extends Plugin {
     public void load() {
         super.load();
         photoViewerImp = new PhotoViewer(getContext(), getBridge());
+        implementation = new FileViewer(this.getActivity());
     }
 
     @PluginMethod
@@ -99,5 +102,16 @@ public class FileViewerPlugin extends Plugin {
                             }
                         }
                 );
+    }
+
+    @PluginMethod
+    public void openDocument(PluginCall call) {
+        String filePath = call.getString("filePath");
+        if (filePath != null) {
+            File file = new File(filePath);
+            implementation.openDoc(file, call);
+        } else {
+            call.reject("文件路径为空", "filePathEmpty");
+        }
     }
 }

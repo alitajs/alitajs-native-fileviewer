@@ -84,18 +84,16 @@ const HomePage: FC<HomePageProps> = () => {
     const dir = 'Download';
     const path = `Download/${fileName}`;
     try {
-      await Filesystem.mkdir({ path: dir, directory: Directory.Documents });
+      await Filesystem.mkdir({ path: dir, directory: Directory.ExternalStorage });
     } catch (error) {}
     try {
-      await Filesystem.deleteFile({ path: path, directory: Directory.Documents });
-    } catch (error: any) {
-      alert(error.message);
-    }
+      await Filesystem.deleteFile({ path: path, directory: Directory.ExternalStorage });
+    } catch (error: any) {}
     try {
       Toast.show({ icon: 'loading', duration: 0 });
       const result = await Http.downloadFile({
         filePath: path,
-        fileDirectory: Directory.Documents,
+        fileDirectory: Directory.ExternalStorage,
         url: url,
       });
       setFilePath(result.path || '');
