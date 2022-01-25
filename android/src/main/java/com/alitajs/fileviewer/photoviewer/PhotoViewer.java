@@ -22,13 +22,9 @@ public class PhotoViewer extends BridgeActivity {
     private int frameLayoutViewId = 8256;
     private Bridge bridge;
 
-    PhotoViewer(Context context, Bridge bridge) {
+    public PhotoViewer(Context context, Bridge bridge) {
         this.context = context;
         this.bridge = bridge;
-    }
-
-    public String echo(String value) {
-        return value;
     }
 
     public void show(JSArray images, String mode, Integer startFrom, JSObject options) throws Exception {
@@ -144,7 +140,7 @@ public class PhotoViewer extends BridgeActivity {
             } else {
                 Object obj = jsArray.get(i);
                 String url = ((JSONObject) obj).getString("url");
-                String title = ((JSONObject) obj).getString("title");
+                String title = ((JSONObject) obj).has("title") ? ((JSONObject) obj).getString("title") : "";
                 list.add(new Image(url, title));
             }
         }
