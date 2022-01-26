@@ -59,9 +59,9 @@ previewImage(options: PreviewImageOptions) => Promise<PreviewImageResult>
 
 #### OpenDocumentOptions
 
-| Prop           | Type                |
-| -------------- | ------------------- |
-| **`filePath`** | <code>string</code> |
+| Prop           | Type                | Description |
+| -------------- | ------------------- | ----------- |
+| **`filePath`** | <code>string</code> | 文件本地路径      |
 
 
 #### PreviewImageResult
