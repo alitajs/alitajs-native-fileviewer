@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alitajs/native-fileviewer.git"
+    "url": "https://github.com/alitajs/alitajs-native-fileviewer.git"
   },
   "bugs": {
-    "url": "https://github.com/alitajs/native-fileviewer/issues"
+    "url": "https://github.com/alitajs/alitajs-native-fileviewer/issues"
   },
   "keywords": [
     "capacitor",
