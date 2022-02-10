@@ -115,3 +115,28 @@ previewImage(options: PreviewImageOptions) => Promise<PreviewImageResult>
 | **`ratio`**     | <code>string</code> | Movie Ratio "4/3" / "16/9" (default "16/9") iOS only                     |
 
 </docgen-api>
+
+## How to use this plugin in existing native project
+
+### ios
+
+in `Podfile`
+
+```ruby
+pod 'AlitajsBarcode'
+```
+
+### android
+
+in `build.gradle`
+
+```java
+repositories {
+  ...
+  maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+  implementation 'com.github.alitajs:alitajs-native-barcode:Tag'
+}
+```
