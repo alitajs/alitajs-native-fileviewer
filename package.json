@@ -1,6 +1,6 @@
 {
   "name": "@alitajs/fileviewer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Documents and images viewer",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
